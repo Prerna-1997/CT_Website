@@ -1,0 +1,228 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript">
+     	var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+ 			// replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+		clevertap.account.push({"id": "694-499-575Z"});
+		clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+		clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+		 (function () {
+			 var wzrk = document.createElement('script');
+			 wzrk.type = 'text/javascript';
+			 wzrk.async = true;
+			 wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
+			 var s = document.getElementsByTagName('script')[0];
+			 s.parentNode.insertBefore(wzrk, s);
+  		})();
+
+  		clevertap.notifications.push({
+    		"titleText":'Would you like to receive Push Notifications?',
+    		"bodyText":'We promise to only send you relevant content and give you updates on your transactions',
+    		"okButtonText":'Sign me up!',
+    		"rejectButtonText":'No thanks',
+    		"okButtonColor":'#f28046'});
+		</script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script> 
+
+		<script>
+		
+		</script>
+
+		<script>
+
+			$(document).ready(function(){
+				$("button").click(function(){
+					$("#p1").text(clevertap.getCleverTapID())			//set value
+					var data=$("#p1").text()							//get value
+						document.write("CleverTap ID: "+data)
+					});
+				});
+
+			function onuserLogin()
+			{
+				var name=document.getElementById("name").value;
+				var email=document.getElementById("email").value;
+				var contact=document.getElementById("contact").value;
+				var identity=document.getElementById("identity").value;
+				var up=document.getElementById("up").value;
+				var upv=document.getElementById("upv").value;
+
+				clevertap.onUserLogin.push
+  				({
+ 					"Site": 
+ 					{
+   						"Name": name, 
+   						"Email": email,
+   						"Phone": contact,
+   						"Identity": identity,
+   						//up: upv,
+ 					}
+				});
+
+				console.log("onUserLogin method called");
+
+				alert("Hello! You have Registered Successfully!!");
+			}
+
+			function pushProfile()
+			{
+				var name=document.getElementById("name").value;
+				var email=document.getElementById("email").value;
+				var contact=document.getElementById("contact").value;
+				var identity=document.getElementById("identity").value;
+				var up=document.getElementById("up").value;
+				var upv=document.getElementById("upv").value;
+
+				clevertap.profile.push
+  				({
+ 					"Site": 
+ 					{
+   						"Name": name, 
+   						"Email": email,
+   						"Phone": contact,
+   						"Identity": identity,
+   						//up: upv,
+ 					}
+				});
+
+				console.log("pushProfile method called");
+
+				alert("Hello! You have Registered Successfully!!");
+			}
+
+			function events()
+  			{
+				console.log("notification method called");
+  				var event=document.getElementById("event").value;
+  				var eventp=document.getElementById("eventp").value;
+  				var eventpv=document.getElementById("eventpv").value;
+  				clevertap.event.push(event,{
+  					eventp: eventpv,
+  				});
+
+				alert("Event Pushed Successfully!!");	
+  			}
+		</script>
+
+		<title>My Website</title>
+		<style>
+			th, td 
+			{
+  				padding: 10px;
+			}
+			button
+			{
+				background-color: #0E80F1;
+  				border: none;
+  				color: white;
+  				padding: 10px 20px;
+  				text-align: center;
+  				text-decoration: none;
+  				display: inline-block;
+  				font-size: 14px;
+  				margin: 4px 2px;
+  				cursor: pointer;
+			}
+			ul 
+			{
+  				list-style-type: none;
+  				margin: 0;
+  				padding: 0;
+  				overflow: hidden;
+  				background-color: #333;
+			}
+
+			li 
+			{
+  				float: left;
+			}
+
+			li a 
+			{
+  				display: block;
+  				color: white;
+  				text-align: center;
+  				padding: 14px 16px;
+  				text-decoration: none;
+  				width: 100%
+  				height:400px;
+			}
+
+			li a:hover:not(.active) 
+			{
+  				background-color: #111;
+			}
+
+			.active 
+			{
+  				background-color: #0E80F1;
+			}
+		</style>
+
+	</head>
+	<body>
+		<center>
+		<h1>MY WEBSITE</h1>
+			<br><br>
+			<h1>USER DETAILS</h1>
+			<div class="container">
+				<div class="left">
+				<table width="50%" height="200px">
+				<tr>
+					<td width="100%"><img src="login.jpg" width="200px" height="200px"><li><a class="active" href="index.html">LOGIN PAGE</a></li></td>
+				</tr>
+				<tr>
+					<td><img src="event.jpg" width="200px" height="200px"><li><a href="event_push.html">PUSH EVENTS</a></li></td>
+				</tr>
+			</table>
+			</div>
+
+			<div class="right">
+			<table width="100%">
+				<tr>
+					<td width="100%"><input type="text" id="p1" name="" value="" placeholder="CLEVERTAP ID"></td>
+				</tr>
+
+				<tr>
+					<td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<button>GET CLEVERTAP ID</button></td>
+				</tr>
+
+				<tr>
+					<td><input type="text" id="name" name="" placeholder="NAME"></td>
+				</tr>
+
+				<tr>
+					<td><input type="text" id="email" name="" placeholder="EMAIL"></td>
+				</tr>
+
+				<tr>
+					<td><input type="text" id="contact" name="" placeholder="CONTACT"></td>
+				</tr>
+
+				<tr>
+					<td><input type="text" id="identity" name="" placeholder="IDENTITY"></td>
+				</tr>
+
+				<tr>
+					<td><input type="text" id="up" name="" placeholder="USER PROPERTY"></td>
+				</tr>
+
+				<tr>
+					<td><input type="text" id="upv" name="" placeholder="USER PROPERTY VALUE"></td>
+				</tr>
+
+				<tr>
+					<td><button onclick="onuserLogin()">LOGIN</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<button onclick="pushProfile()">PUSH PROFILE</button></td>
+				</tr>
+			</table>
+		</div>
+		</div>
+		</center>
+	</body>
+</html>

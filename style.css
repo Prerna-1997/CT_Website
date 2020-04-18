@@ -1,0 +1,61 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	background: url(img.jpg);
+	background-size: cover;
+	font-family: sans-serif;
+	background-repeat: no-repeat;
+}
+.title
+{
+	text-align: center;
+	padding: 50px 0 20px
+}
+.title h1
+{
+	margin: 0;
+	padding: 0;
+	color: #262626;
+	text-transform: uppercase;
+	font-size: 36px;
+}
+.container
+{
+	width: 50%;
+	height: 580px;
+	background: #fff;
+	margin: 0 auto;
+	border: 2px solid #fff;
+	box-shadow: 0 15px 40px rgba(0,0,0,0.5); 
+	background-color: #051019;
+	opacity: 0.6;
+	text-align: center;
+}
+.container .left
+{
+	float: left;
+	width: 40%;
+	height: 300px;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+}
+.container .right
+{
+	float: left;
+	width: 60%;
+	height: 600px;
+	box-sizing: border-box;
+}
+td input[type="text"]
+{
+	border: none;
+	width: 100%;
+	border-bottom: 2px solid #0E80F1;
+	outline: none;
+	height: 40px;
+}
+td input[type="text"]:focus
+{
+	border-bottom: 2px solid #262626;
+}
