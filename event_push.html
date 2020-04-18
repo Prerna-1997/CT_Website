@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript">
+     	var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+ 			// replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+		clevertap.account.push({"id": "694-499-575Z"});
+		clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+		clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+		 (function () {
+			 var wzrk = document.createElement('script');
+			 wzrk.type = 'text/javascript';
+			 wzrk.async = true;
+			 wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
+			 var s = document.getElementsByTagName('script')[0];
+			 s.parentNode.insertBefore(wzrk, s);
+  		})();
+
+  		clevertap.notifications.push({
+    		"titleText":'Would you like to receive Push Notifications?',
+    		"bodyText":'We promise to only send you relevant content and give you updates on your transactions',
+    		"okButtonText":'Sign me up!',
+    		"rejectButtonText":'No thanks',
+    		"okButtonColor":'#f28046'});
+		</script>
+
+		<style>
+			th, td 
+			{
+  				padding: 10px;
+			}
+			button
+			{
+				background-color: #0E80F1;
+  				border: none;
+  				color: white;
+  				padding: 10px 20px;
+  				text-align: center;
+  				text-decoration: none;
+  				display: inline-block;
+  				font-size: 14px;
+  				margin: 4px 2px;
+  				cursor: pointer;
+			}
+			ul 
+			{
+  				list-style-type: none;
+  				margin: 0;
+  				padding: 0;
+  				overflow: hidden;
+  				background-color: #333;
+			}
+
+			li 
+			{
+  				float: left;
+			}
+
+			li a 
+			{
+  				display: block;
+  				color: white;
+  				text-align: center;
+  				padding: 14px 16px;
+  				text-decoration: none;
+			}
+
+			li a:hover:not(.active) 
+			{
+  				background-color: #111;
+			}
+
+			.active 
+			{
+  				background-color: #0E80F1;
+			}
+		</style>
+	</head>
+	<center>
+		<h1>MY WEBSITE</h1>
+		<br><br>
+		<h1>EVENT DETAILS</b></caption>
+			<div class="container">
+				<div class="left">
+				<table width="50%" height="200px">
+				<tr>
+					<td width="100%"><img src="login.jpg" width="200px" height="200px"><li><a href="index.html">LOGIN PAGE</a></li></td>
+				</tr>
+				<tr>
+					<td><img src="event.jpg" width="200px" height="200px"><li><a class="active" href="event_push.html">PUSH EVENTS</a></li></td>
+				</tr>
+			</table>
+		</div>
+		<div class="right">
+		<table width="100%">
+			<tr>
+				<td><input type="text" id="event" name="" placeholder="EVENT NAME"></td>
+			</tr>
+
+			<tr>
+				<td><input type="text" id="eventp" name="" placeholder="EVENT PROPERTY"></td>
+			</tr>
+
+			<tr>
+				<td><input type="text" id="eventpv" name="" placeholder="EVENT PROPERTY VALUE"></td>
+			</tr>
+
+			<tr>
+				<td><button onclick="events()">FIRE</button><&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="clear">RESET</button></td>
+			</tr>
+		</table>
+	</div>
+		</center>
+</html>
